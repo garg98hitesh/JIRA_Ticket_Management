@@ -78,13 +78,27 @@ addBtn.addEventListener("click", (e) => {
     addFlag = !addFlag;
     if (addFlag) {
         modalCont.style.display = "flex";
+       // addBtn.style.backgroundcolor = 'red'; 
+    //    addBtn.bgcolor="red";
+        document.getElementById("toggleAddButtonColor").style.background = 'black';
     }
     else {
         modalCont.style.display = "none";
+        // addBtn.bgcolor = "pink";
+        document.getElementById("toggleAddButtonColor").style.background = '#3d3d3d'
     }
 })
 removeBtn.addEventListener("click", (e) => {
     removeFlag = !removeFlag;
+    if (removeFlag) {
+    
+        document.getElementById("toggleRemoveButtonColor").style.background = 'black';
+    }
+    else {
+        modalCont.style.display = "none";
+        // addBtn.bgcolor = "pink";
+        document.getElementById("toggleRemoveButtonColor").style.background = '#3d3d3d'
+    }
     console.log(removeFlag);
 })
 
@@ -94,6 +108,7 @@ modalCont.addEventListener("keydown", (e) => {
     if (key === "Shift") {
         createTicket(modalPriorityColor, textareaCont.value);
         addFlag = false;
+        document.getElementById("toggleAddButtonColor").style.background = '#3d3d3d'
         setModalToDefault();
     }
 })
